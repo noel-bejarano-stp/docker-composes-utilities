@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  # Nombre del servicio
+  redis:
+    # Imagen oficial de Redis (latest es generalmente estable)
+    image: redis:latest
+    
+    # Reiniciar siempre
+    restart: always
+    
+    # Mapeo de puertos: host_port:container_port
+    # Esto permite acceder a Redis desde el host en el puerto 6379 (el puerto estándar de Redis)
+    ports:
+      - "6379:6379"
+      
+    # Volumen para la persistencia de datos (opcional, pero recomendado)
+    # Redis guarda los datos en un archivo de volcado (dump.rdb) o usa AOF.
+    volumes:
+      - redis_data:/data
+      
+# Definición del volumen
+volumes:
+  redis_data:
+    driver: local

@@ -6,12 +6,6 @@ The goal is to standardize how we provision infrastructure dependencies (databas
 
 ---
 
-## 📂 Repository Structure
-
-The following folder structure is designed to keep the `compose` files organized by service type.
-
-. ├── docs/ (Additional documentation, screenshots, diagrams) ├── services/ (All docker-compose files are stored here) │ ├── databases/ │ │ ├── postgres-14/ │ │ │ ├── docker-compose.yml │ │ │ └── DDL.sql (Example initialization scripts) │ │ ├── mysql-8/ │ │ ├── mongodb/ │ │ └── ... │ ├── cache/ │ │ ├── redis/ │ │ │ └── docker-compose.yml │ │ └── memcached/ │ ├── tools/ │ │ ├── pgadmin/ │ │ ├── adminer/ │ │ └── traefik/ │ └── full-stacks/ (Combinations of services that work together, e.g., Postgres + Redis + WebApp) │ └── app-base/ │ └── docker-compose.yml └── README.md (This file)
-
 ## 🚀 Basic Usage (Spinning Up a Service)
 
 To spin up a specific service, navigate to its folder and use the `docker-compose up` command.
